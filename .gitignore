@@ -1,0 +1,8 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+__pycache__/
+checkpoints
+*.egg-info
+test_video
+saved_videos

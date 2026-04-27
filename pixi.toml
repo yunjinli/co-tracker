@@ -1,0 +1,28 @@
+[workspace]
+authors = ["Jim Li <yunjin.li0817@gmail.com>"]
+channels = ["conda-forge"]
+name = "co-tracker"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+install-checkpoints = {cmd = "mkdir -p checkpoints && cd checkpoints && wget https://huggingface.co/facebook/cotracker3/resolve/main/scaled_online.pth && cd ../"}
+[dependencies]
+python = "3.10.*"
+
+[pypi-options]
+extra-index-urls = ["https://download.pytorch.org/whl/cu128"]
+
+[pypi-dependencies]
+matplotlib = ">=3.10.9, <4"
+flow-vis = ">=0.1, <0.2"
+tqdm = "*"
+tensorboard = ">=2.20.0, <3"
+cotracker = {path = ".", editable = true}
+torch = "==2.7.0"
+torchvision = "==0.22.0" 
+torchaudio = "==2.7.0"
+imageio = {version = "*", extras = ["ffmpeg"]}
+opencv-python = ">=4.13.0.92, <5"
+torchinfo = ">=1.8.0, <2"
+
